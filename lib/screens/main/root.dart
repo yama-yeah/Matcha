@@ -29,7 +29,7 @@ class Rooter extends HookWidget {
     null,
   ];
   static const _Labels = [
-    "apiNotifys",
+    "Homework",
     "TimeTable",
     "Settings",
   ];
