@@ -4,7 +4,7 @@ import 'package:matcha/factory/main/rootes/homework/homework_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
-class HomeWork extends StatelessWidget {
+class HomeWork extends HookWidget {
   List<Widget> list = [];
 
   List<Widget> test() {

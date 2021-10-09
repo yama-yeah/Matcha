@@ -10,8 +10,16 @@ import 'package:matcha/data/provider/provider.dart';
 import 'package:intl/intl.dart';
 import 'package:matcha/factory/util/date.dart';
 import 'package:matcha/factory/util/notify.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class Homework_widget extends HookWidget {
+  RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
+
+  final apiNotify = useProvider(ApiDataProvider.notifier); //
+  final tasksNotify =
+      useProvider(TasksNotifierSettingProvider.notifier); //何故動いてるのかわからんから要注意
+  //めんどいから寝ます
   List<Widget> make_tiles() {
     final homework = useProvider(ApiDataProvider.notifier);
     final homeworkState = useProvider(ApiDataProvider);
@@ -127,8 +135,39 @@ class Homework_widget extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: make_tiles(),
+    return SmartRefresher(
+      enablePullDown: true,
+      //enablePullUp: true,
+      header: WaterDropHeader(),
+      controller: _refreshController,
+      onRefresh: _onRefresh,
+      //onLoading: _onLoading,
+      child: ListView(
+        children: make_tiles(),
+      ),
     );
+  }
+
+  void _onRefresh() async {
+    // monitor network fetch
+    await Future.delayed(Duration(milliseconds: 1000));
+    print('homework:refresh');
+    try {
+      await apiNotify.saveTasks();
+      tasksNotify.fetchNotifyEnable();
+    } catch (e) {
+      print(e.toString());
+    }
+    // if failed,use refreshFailed()
+    _refreshController.refreshCompleted();
+  }
+
+  void _onLoading() async {
+    // monitor network fetch
+
+    await Future.delayed(Duration(milliseconds: 1000));
+    print('loading');
+    // if failed,use loadFailed(),if no data return,use LoadNodata()
+    _refreshController.loadComplete();
   }
 }
