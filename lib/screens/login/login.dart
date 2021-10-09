@@ -9,10 +9,10 @@ import 'package:matcha/factory/util/alert.dart';
 class LoginScreen extends StatelessWidget {
   String _userid = '';
   String _password = '';
+  final userProvider = useProvider(userdataProvider.notifier);
 
   @override
   Widget build(BuildContext context) {
-    final userProvider = useProvider(userdataProvider.notifier);
     return Scaffold(
       appBar: AppBar(
         //backgroundColor: Colors.tealAccent[400],

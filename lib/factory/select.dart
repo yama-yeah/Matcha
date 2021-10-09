@@ -14,7 +14,9 @@ class Init extends HookWidget {
     final userState = useProvider(userdataProvider);
     final StudentProvider = useProvider(ApiDataProvider.notifier);
     int selector = 0;
-    useEffect(() => userProvider.loadKeyChain(), []);
+    useEffect(() {
+      userProvider.loadKeyChain();
+    }, []);
     // TODO: implement build
     if (userProvider.state.userid == '%void%') {
       return LoginScreen();
