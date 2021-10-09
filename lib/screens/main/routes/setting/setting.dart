@@ -18,8 +18,9 @@ class _SettingsState extends State<Settings> {
           title: Text('Notifications'),
         ),
         ListTile(
-          leading: Icon(Icons.account_balance),
-          title: Text('Account Balance'),
+          leading: Icon(Icons.person),
+          title: Text('User Account'),
+          onTap: () => Navigator.of(context).pushNamed('/login'),
         ),
       ],
     );

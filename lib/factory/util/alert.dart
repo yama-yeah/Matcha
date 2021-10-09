@@ -11,7 +11,7 @@ void login_failed_alert(BuildContext context) {
     descTextAlign: TextAlign.start,
     animationDuration: Duration(milliseconds: 200),
     alertBorder: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(0.0),
+      borderRadius: BorderRadius.circular(10.0),
       side: BorderSide(
         color: Colors.grey,
       ),
