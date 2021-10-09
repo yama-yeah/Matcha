@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 class Api {
   //ログインできてるかチェック
   final url = 'https://manabaunko.azurewebsites.net/';
-  Map<String, String> headers = {'Charset': 'utf-8'};
+  Map<String, String> headers = {'content-type': 'application/json'};
   Map<String, dynamic> user = {'userid': 'b1021091', 'password': 'gsi2Z2WU'};
   void User(String userid, String password) {
     this.user['userid'] = userid;
@@ -13,7 +13,9 @@ class Api {
   }
 
   Future<bool> login() async {
-    var raw = await http.post(Uri.parse(url + 'login'), body: user);
+    String body = json.encode(user);
+    var raw =
+        await http.post(Uri.parse(url + 'login'), body: body, headers: headers);
     //print(json2map(raw)['status']);
     return await json2map(raw)['status'] == 'success';
   }
@@ -34,7 +36,8 @@ class Api {
 
     _options.addAll(user);
     print(_options);
-    var _raw = await http.post(Uri.parse(url), body: user);
+    String body = json.encode(_options);
+    var _raw = await http.post(Uri.parse(url), body: body, headers: headers);
     //#debuging
     List<Map<String, dynamic>> _tasks =
         await json2map(_raw)['tasks'].cast<Map<String, dynamic>>();
@@ -48,6 +51,7 @@ class Api {
 
   Map<String, dynamic> json2map(http.Response json) {
     String str = utf8.decode(json.bodyBytes);
+    print(str);
     return jsonDecode(str);
   }
 }
