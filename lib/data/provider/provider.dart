@@ -111,6 +111,7 @@ class TasksNotifierSettingStateNotifier
         ref.read(ApiDataProvider.notifier).state.homeworks;
     print('fetching');
     //ref.watch(ApiDataProvider);
+    print(state.is_taskid_enabled);
     Map<int, Map<String, dynamic>> state_copy = {...state.is_taskid_enabled};
     List<int> _enabled_task_id = state.is_taskid_enabled.keys.toList();
     for (Map<String, dynamic> task in tasks) {
@@ -151,8 +152,9 @@ class TasksNotifierSettingStateNotifier
     if (_raw == null) {
       return;
     }
-    Map<int, Map<String, dynamic>> _state =
-        jsonDecode(_raw).cast<int, Map<String, dynamic>>();
+    Map<String, Map<String, dynamic>> raw =
+        jsonDecode(_raw).cast<String, Map<String, dynamic>>();
+    Map<int, Map<String, dynamic>> _state = map2int(raw);
     state = state.copyWith(is_taskid_enabled: _state);
   }
 
