@@ -8,16 +8,17 @@ import 'package:matcha/data/provider/provider.dart';
 class Init extends HookWidget {
   //select first page
 
-  //final userState = useProvider(userdataProvider);
   @override
   Widget build(BuildContext context) {
     final userProvider = useProvider(userdataProvider.notifier);
+    final userState = useProvider(userdataProvider);
     final StudentProvider = useProvider(ApiDataProvider.notifier);
+    int selector = 0;
     userProvider.loadKeyChain();
     // TODO: implement build
-    if (userProvider.state.userid == '%void%')
+    if (userProvider.state.userid == '%void%') {
       return LoginScreen();
-    else {
+    } else {
       return Rooter();
     }
   }
