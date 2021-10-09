@@ -90,6 +90,8 @@ class LoginScreen extends HookWidget {
                         userProvider.saveKeyChain();
                         Navigator.of(context).pushReplacementNamed("/home");
                       } else {
+                        api.User(userProvider.state.userid,
+                            userProvider.state.password);
                         login_failed_alert(context);
                       }
                     });
