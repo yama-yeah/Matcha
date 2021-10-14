@@ -18,8 +18,8 @@ class _SettingsState extends State<Settings> {
         ListTile(
           leading: Icon(Icons.notifications),
           title: Text('Notifications'),
-          onTap: () {
-            AwesomeNotifications().cancelAllSchedules();
+          onTap: () async {
+            await AwesomeNotifications().cancelAllSchedules();
             createNotification(
               title: 'a',
               body: 'a',

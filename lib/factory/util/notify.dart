@@ -12,9 +12,9 @@ void createNotification({
   int hours = 0,
   int minutes = 0,
   int seconds = 0,
-}) {
+}) async {
   print('createNotification');
-  AwesomeNotifications().createNotification(
+  await AwesomeNotifications().createNotification(
     content: NotificationContent(
       id: id,
       channelKey: channelKey,
