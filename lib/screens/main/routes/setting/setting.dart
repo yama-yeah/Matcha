@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:matcha/factory/util/notify.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
+import 'package:matcha/factory/util/date.dart';
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
@@ -36,7 +37,7 @@ class _SettingsState extends State<Settings> {
                 title: 'a',
                 body: 'aaa',
                 id: 11,
-                date: DateTime.now().toString(),
+                date: DateUtil().format(DateTime.now()),
                 channelKey: 'Tasks',
                 seconds: -3);
           },

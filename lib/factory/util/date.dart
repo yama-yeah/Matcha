@@ -5,6 +5,7 @@ class DateUtil {
   final clock_format = DateFormat('h:mm');
   final simple_format = DateFormat('M/d h:mm');
   DateTime parse(String raw) => manaba_format.parse(raw);
+  String format(DateTime date) => manaba_format.format(date);
   String simple_deadline(String raw) {
     DateTime end = parse(raw);
     Duration diff = end.difference(DateTime.now());
