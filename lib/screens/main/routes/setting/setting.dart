@@ -32,7 +32,7 @@ class _SettingsState extends State<Settings> {
                   date: DateTime.now().add(Duration(seconds: 3)),
                 ));
                 */
-            await createNotification(
+            createNotification(
                 title: 'a',
                 body: 'aaa',
                 id: 10,
