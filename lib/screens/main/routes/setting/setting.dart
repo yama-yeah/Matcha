@@ -19,7 +19,7 @@ class _SettingsState extends State<Settings> {
           leading: Icon(Icons.notifications),
           title: Text('Notifications'),
           onTap: () async {
-            await AwesomeNotifications().cancelAllSchedules();
+            //await AwesomeNotifications().cancelAllSchedules();
             /*
             await AwesomeNotifications().createNotification(
                 content: NotificationContent(
