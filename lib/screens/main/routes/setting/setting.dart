@@ -34,7 +34,9 @@ class _SettingsState extends State<Settings> {
                 ));
 
             print(DateUtil().format(DateTime.now()));
-            print(DateUtil().parse(DateUtil().format(DateTime.now())));
+            print(DateUtil()
+                .parse(DateUtil().format(DateTime.now()))
+                .add(Duration(seconds: 3)));
             createNotification(
                 title: 'a',
                 body: 'aaa',
