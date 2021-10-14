@@ -185,6 +185,7 @@ class TasksNotifierSettingStateNotifier
               minutes: minutes,
             );
           } catch (e) {
+            print(e);
             print(task['task_id'].toString() + ' is enabled');
             print(task['task_title'] + ' is enabled');
           }

@@ -15,9 +15,9 @@ createNotification({
 }) async =>
     await AwesomeNotifications().createNotification(
         content: NotificationContent(
-          title: 'Notification',
-          body: 'This is a notification',
-          channelKey: 'Tasks',
+          title: title,
+          body: body,
+          channelKey: channelKey,
           id: id,
         ),
         schedule: NotificationCalendar.fromDate(
