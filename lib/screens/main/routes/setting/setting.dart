@@ -37,9 +37,10 @@ class _SettingsState extends State<Settings> {
                 title: 'a',
                 body: 'aaa',
                 id: 11,
-                date: DateUtil().format(DateTime.now()),
+                date:
+                    DateUtil().format(DateTime.now().add(Duration(seconds: 3))),
                 channelKey: 'Tasks',
-                seconds: -3);
+                seconds: -1);
           },
         ),
         ListTile(
