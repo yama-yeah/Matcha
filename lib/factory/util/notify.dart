@@ -21,10 +21,5 @@ createNotification({
           id: id,
         ),
         schedule: NotificationCalendar.fromDate(
-          date: dateutil.parse(date).add(Duration(
-                  days: days,
-                  hours: hours,
-                  minutes: minutes,
-                  seconds: seconds) *
-              -1),
+          date: dateutil.parse(date).add(Duration(seconds: seconds) * -1),
         ));
