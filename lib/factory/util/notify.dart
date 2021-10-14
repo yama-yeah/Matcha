@@ -15,8 +15,8 @@ createNotification({
 }) async =>
     await AwesomeNotifications().createNotification(
         content: NotificationContent(
-          title: title,
-          body: body,
+          title: 'Notification',
+          body: 'This is a notification',
           channelKey: 'Tasks',
           id: id,
         ),
