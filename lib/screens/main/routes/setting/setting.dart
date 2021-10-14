@@ -40,6 +40,8 @@ class _SettingsState extends State<Settings> {
                 date: dateutil.format(DateTime.now()),
                 channelKey: 'Tasks',
                 seconds: -1);
+
+            print(dateutil.format(DateTime.now()));
           },
         ),
         ListTile(
