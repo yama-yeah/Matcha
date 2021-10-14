@@ -2,7 +2,7 @@ import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/foundation.dart';
 import 'package:matcha/factory/util/date.dart';
 
-Future<void> createNotification({
+void createNotification({
   required String title,
   required String body,
   required int id,
