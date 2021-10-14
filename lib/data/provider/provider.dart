@@ -177,7 +177,7 @@ class TasksNotifierSettingStateNotifier
             createNotification(
               title: task['task_title'],
               body: task['course_name'],
-              id: int.parse(task['task_id']),
+              id: task['task_id'],
               date: task['end'],
               channelKey: 'Tasks',
               days: days,

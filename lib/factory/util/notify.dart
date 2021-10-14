@@ -17,7 +17,7 @@ createNotification({
         content: NotificationContent(
           title: title,
           body: body,
-          channelKey: channelKey,
+          channelKey: 'Tasks',
           id: id,
         ),
         schedule: NotificationCalendar.fromDate(
