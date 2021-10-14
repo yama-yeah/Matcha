@@ -12,8 +12,8 @@ createNotification({
   int hours = 0,
   int minutes = 0,
   int seconds = 0,
-}) =>
-    AwesomeNotifications().createNotification(
+}) async =>
+    await AwesomeNotifications().createNotification(
       content: NotificationContent(
         id: id,
         channelKey: channelKey,
