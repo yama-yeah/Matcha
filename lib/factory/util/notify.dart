@@ -21,7 +21,7 @@ createNotification({
         id: id,
       ),
       schedule: NotificationCalendar.fromDate(
-        date: DateTime.now().add(Duration(
+        date: dateutil.parse(date).add(Duration(
                 days: days, hours: hours, minutes: minutes, seconds: seconds) *
             -1),
       ),
