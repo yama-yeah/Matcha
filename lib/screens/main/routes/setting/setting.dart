@@ -20,13 +20,16 @@ class _SettingsState extends State<Settings> {
           title: Text('Notifications'),
           onTap: () async {
             await AwesomeNotifications().cancelAllSchedules();
-            await createNotification(
-              title: 'a',
-              body: 'a',
-              id: 100,
-              date: DateTime.now().add(Duration(seconds: 5)).toString(),
-              channelKey: 'Tasks',
-            );
+            await AwesomeNotifications().createNotification(
+                content: NotificationContent(
+                  title: 'Notification',
+                  body: 'This is a notification',
+                  channelKey: 'Tasks',
+                  id: 10,
+                ),
+                schedule: NotificationCalendar.fromDate(
+                  date: DateTime.now().add(Duration(seconds: 3)),
+                ));
           },
         ),
         ListTile(
