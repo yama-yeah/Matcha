@@ -110,8 +110,6 @@ class TasksNotifierSettingStateNotifier
     List<Map<String, dynamic>> tasks =
         ref.read(ApiDataProvider.notifier).state.homeworks;
     print('fetching');
-    //ref.watch(ApiDataProvider);
-    print(state.is_taskid_enabled);
     Map<int, Map<String, dynamic>> state_copy = {...state.is_taskid_enabled};
     List<int> _enabled_task_id = state.is_taskid_enabled.keys.toList();
     for (Map<String, dynamic> task in tasks) {
@@ -201,85 +199,3 @@ final TasksNotifierSettingProvider = StateNotifierProvider((ref) {
   //provider.loadNotifyEnable();
   return provider;
 });
-
-
-/*
-@freezed
-class StudentData with _$StudentData {
-  //shared
-  factory StudentData({
-    @Default({
-      'least_days': 0,
-      'exception_id': [],
-    })
-        Map<String, dynamic> api_settings,
-    @Default({
-      'courseid_filter': [],
-      'taskid_filter': <Map<String, int>>[],
-      'timing_settings': <String, int>{'days': 0, 'hours': 0, 'minutes': 0},
-    })
-        Map<String, dynamic> tasks_notify_settings,
-    @Default({
-      'timing_settings': <String, int>{'minutes': 0}
-    })
-        Map<String, dynamic> classes_notify,
-  }) = _StudentData;
-}
-
-class StudentDataNotifier extends StateNotifier<StudentData> {
-  StudentDataNotifier() : super(StudentData());
-  setTasks(List<Map<String, dynamic>> tasks) =>
-      state = state.copyWith(homework: tasks);
-  setLeast(int least) =>
-      state = state.copyWith(api_settings: state.api_settings['least_days']);
-  getTasks() async {
-    var _tasks = await api.get_tasks(
-        least: state.least_days, course_list: state.courseid_list);
-    state = state.copyWith(homework: _tasks);
-  }
-
-  Future<void> saveTasks() async {
-    List<Map<String, dynamic>> _tasks = await api.get_tasks();
-    createTasksNotify(_tasks);
-    state = state.copyWith(homework: _tasks);
-    //SharedPreferences prefs = await SharedPreferences.getInstance();
-    String _json = jsonEncode(_tasks);
-    //prefs.setString('homework', _json);
-  }
-
-  Future<void> loadTasks() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String> _keys = prefs.getKeys().toList();
-    if (_keys.contains('homework')) {
-      print('init pref');
-      String? _raw = prefs.getString('homework');
-      if (_raw == null) {
-        print('null');
-        return;
-      }
-      List<dynamic> _tasks = jsonDecode(_raw);
-      state = state.copyWith(homework: _tasks.cast<Map<String, dynamic>>());
-    }
-  }
-
-  Future<void> createTasksNotify(List<Map<String, dynamic>> tasks) async {
-    for (var task in tasks) {
-      createNotification(
-        title: task['task_title'],
-        body: task['course_name'],
-        id: task['task_id'],
-        date: task['end'],
-        channelKey: 'task_channel',
-        hours: 3,
-      );
-    }
-  }
-
-  Future<void> createClassesNotification(Map<String, dynamic> classes) async {
-    var _today_classes = classes[dateutil.day_of_week(DateTime.now())];
-    //TODO: create notification for classes
-  }
-}
-
-final StudentDataProvider = StateNotifierProvider((_) => StudentDataNotifier());
-*/

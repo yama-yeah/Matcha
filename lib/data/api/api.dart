@@ -16,7 +16,6 @@ class Api {
     String body = json.encode(user);
     var raw =
         await http.post(Uri.parse(url + 'login'), body: body, headers: headers);
-    //print(json2map(raw)['status']);
     return await json2map(raw)['status'] == 'success';
   }
 
@@ -51,7 +50,6 @@ class Api {
 
   Map<String, dynamic> json2map(http.Response json) {
     String str = utf8.decode(json.bodyBytes);
-    print(str);
     return jsonDecode(str);
   }
 }
