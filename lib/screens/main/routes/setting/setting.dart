@@ -37,7 +37,7 @@ class _SettingsState extends State<Settings> {
                 title: 'a',
                 body: 'aaa',
                 id: 11,
-                date: DateUtil().format(DateTime.now()),
+                date: dateutil.format(DateTime.now()),
                 channelKey: 'Tasks',
                 seconds: -1);
           },
