@@ -19,12 +19,12 @@ class _SettingsState extends State<Settings> {
           leading: Icon(Icons.notifications),
           title: Text('Notifications'),
           onTap: () => createNotification(
-              title: 'a',
-              body: 'a',
-              id: 100,
-              date: DateTime.now().toString(),
-              channelKey: 'Tasks',
-              seconds: -1),
+            title: 'a',
+            body: 'a',
+            id: 100,
+            date: DateTime.now().add(Duration(seconds: 1)).toString(),
+            channelKey: 'Tasks',
+          ),
         ),
         ListTile(
           leading: Icon(Icons.person),
