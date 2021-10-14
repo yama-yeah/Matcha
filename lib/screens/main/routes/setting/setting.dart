@@ -33,12 +33,12 @@ class _SettingsState extends State<Settings> {
                   date: DateTime.now().add(Duration(seconds: 3)),
                 ));
 
+            print(DateUtil().format(DateTime.now()));
             createNotification(
                 title: 'a',
                 body: 'aaa',
                 id: 11,
-                date:
-                    DateUtil().format(DateTime.now().add(Duration(seconds: 3))),
+                date: DateUtil().format(DateTime.now()),
                 channelKey: 'Tasks',
                 seconds: -1);
           },
