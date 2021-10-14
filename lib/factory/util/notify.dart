@@ -14,17 +14,10 @@ createNotification({
   int seconds = 0,
 }) async =>
     await AwesomeNotifications().createNotification(
-        content: NotificationContent(
-          title: title,
-          body: body,
-          channelKey: channelKey,
-          id: id,
-        ),
-        schedule: NotificationCalendar.fromDate(
-          date: dateutil.parse(date).add(Duration(
-                  days: days,
-                  hours: hours,
-                  minutes: minutes,
-                  seconds: seconds) *
-              -1),
-        ));
+      content: NotificationContent(
+        title: title,
+        body: body,
+        channelKey: channelKey,
+        id: id,
+      ),
+    );
