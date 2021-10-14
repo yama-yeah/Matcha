@@ -20,7 +20,7 @@ class _SettingsState extends State<Settings> {
           title: Text('Notifications'),
           onTap: () async {
             await AwesomeNotifications().cancelAllSchedules();
-            createNotification(
+            await createNotification(
               title: 'a',
               body: 'a',
               id: 100,
