@@ -174,6 +174,7 @@ class TasksNotifierSettingStateNotifier
       if (_keys.contains(task['task_id'])) {
         if (state.is_taskid_enabled[task['task_id']]!['enable']) {
           try {
+            /*
             createNotification(
               title: task['task_title'],
               body: task['course_name'],
@@ -184,6 +185,7 @@ class TasksNotifierSettingStateNotifier
               hours: hours,
               minutes: minutes,
             );
+            */
           } catch (e) {
             print(e);
             print(task['task_id'].toString() + ' is enabled');
