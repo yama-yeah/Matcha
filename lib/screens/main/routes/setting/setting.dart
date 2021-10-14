@@ -32,13 +32,13 @@ class _SettingsState extends State<Settings> {
                   date: DateTime.now().add(Duration(seconds: 3)),
                 ));
 
-            /*createNotification(
+            createNotification(
                 title: 'a',
                 body: 'aaa',
-                id: 10,
+                id: 11,
                 date: DateTime.now().toString(),
                 channelKey: 'Tasks',
-                seconds: -3);*/
+                seconds: -3);
           },
         ),
         ListTile(
