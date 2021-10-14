@@ -22,7 +22,7 @@ class _SettingsState extends State<Settings> {
             title: 'a',
             body: 'a',
             id: 100,
-            date: DateTime.now().add(Duration(seconds: 1)).toString(),
+            date: DateTime.now().add(Duration(seconds: 5)).toString(),
             channelKey: 'Tasks',
           ),
         ),
