@@ -16,12 +16,12 @@ createNotification({
     await AwesomeNotifications().createNotification(
       content: NotificationContent(
         title: title,
-        body: 'This is a notification',
+        body: body,
         channelKey: channelKey,
         id: id,
       ),
       schedule: NotificationCalendar.fromDate(
-        date: DateTime.now().add(Duration(
+        date: dateutil.parse(date).add(Duration(
                 days: days, hours: hours, minutes: minutes, seconds: seconds) *
             -1),
       ),
