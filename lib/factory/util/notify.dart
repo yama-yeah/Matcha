@@ -13,6 +13,7 @@ void createNotification({
   int minutes = 0,
   int seconds = 0,
 }) {
+  print('createNotification');
   AwesomeNotifications().createNotification(
     content: NotificationContent(
       id: id,

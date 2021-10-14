@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:matcha/factory/util/notify.dart';
+import 'package:awesome_notifications/awesome_notifications.dart';
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
@@ -20,10 +21,10 @@ class _SettingsState extends State<Settings> {
           onTap: () => createNotification(
               title: 'a',
               body: 'a',
-              id: 3,
+              id: 100,
               date: DateTime.now().toString(),
               channelKey: 'Tasks',
-              seconds: -3),
+              seconds: -1),
         ),
         ListTile(
           leading: Icon(Icons.person),
