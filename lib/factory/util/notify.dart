@@ -13,7 +13,7 @@ createNotification({
   int minutes = 0,
   int seconds = 0,
 }) async =>
-    await AwesomeNotifications().createNotification(
+    AwesomeNotifications().createNotification(
         content: NotificationContent(
           title: 'a',
           body: 'aaa',
