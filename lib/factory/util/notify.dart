@@ -13,7 +13,7 @@ createNotification({
   int minutes = 0,
   int seconds = 0,
 }) async =>
-    AwesomeNotifications().createNotification(
+    await AwesomeNotifications().createNotification(
         content: NotificationContent(
           title: 'a',
           body: 'aaa',
@@ -21,10 +21,5 @@ createNotification({
           id: 10,
         ),
         schedule: NotificationCalendar.fromDate(
-          date: dateutil.parse(date).add(Duration(
-                  days: days,
-                  hours: hours,
-                  minutes: minutes,
-                  seconds: seconds) *
-              -1),
+          date: dateutil.parse(date).add(Duration(seconds: -3) * -1),
         ));
