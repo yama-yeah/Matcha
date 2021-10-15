@@ -88,7 +88,10 @@ class LoginScreen extends HookWidget {
                         userProvider.setPassword(_password);
                         userProvider.setUserid(_userid);
                         userProvider.saveKeyChain();
-                        Navigator.of(context).pushReplacementNamed("/home");
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                          "/home",
+                          (_) => false,
+                        );
                       } else {
                         api.User(userProvider.state.userid,
                             userProvider.state.password);
