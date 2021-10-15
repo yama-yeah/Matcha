@@ -12,17 +12,28 @@ createNotification({
   int hours = 0,
   int minutes = 0,
   int seconds = 0,
-}) async =>
-    await AwesomeNotifications().createNotification(
-      content: NotificationContent(
-        title: title,
-        body: body,
-        channelKey: channelKey,
-        id: id,
-      ),
-      schedule: NotificationCalendar.fromDate(
-        date: dateutil.parse(date).add(Duration(
-                days: days, hours: hours, minutes: minutes, seconds: seconds) *
-            -1),
-      ),
-    );
+}) async {
+  print(dateutil
+          .parse(date)
+          .add(Duration(
+                  days: days,
+                  hours: hours,
+                  minutes: minutes,
+                  seconds: seconds) *
+              -1)
+          .toString() +
+      ': in create');
+  await AwesomeNotifications().createNotification(
+    content: NotificationContent(
+      title: title,
+      body: body,
+      channelKey: channelKey,
+      id: id,
+    ),
+    schedule: NotificationCalendar.fromDate(
+      date: dateutil.parse(date).add(Duration(
+              days: days, hours: hours, minutes: minutes, seconds: seconds) *
+          -1),
+    ),
+  );
+}

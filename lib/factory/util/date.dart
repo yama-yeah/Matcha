@@ -1,9 +1,9 @@
 import 'package:intl/intl.dart';
 
 class DateUtil {
-  final manaba_format = DateFormat('yyyy-MM-dd hh:mm');
-  final clock_format = DateFormat('h:mm');
-  final simple_format = DateFormat('M/d h:mm');
+  final manaba_format = DateFormat('yyyy-MM-dd HH:mm');
+  final clock_format = DateFormat('H:mm');
+  final simple_format = DateFormat('M/d H:mm');
   DateTime parse(String raw) => manaba_format.parse(raw);
   String format(DateTime date) => manaba_format.format(date);
   String simple_deadline(String raw) {
