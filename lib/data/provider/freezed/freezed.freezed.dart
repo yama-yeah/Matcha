@@ -174,14 +174,110 @@ class _$ApiDataTearOff {
 
   _ApiData call(
       {List<Map<String, dynamic>> homeworks = const [],
-      Map<String, dynamic> timetable = const {
-        'Mon': <Map<String, dynamic>>[],
-        'Tue': <Map<String, dynamic>>[],
-        'Wed': <Map<String, dynamic>>[],
-        'Thu': <Map<String, dynamic>>[],
-        'Fri': <Map<String, dynamic>>[],
-        'Sat': <Map<String, dynamic>>[],
-        'Others': <Map<String, dynamic>>[]
+      Map<String, List<dynamic>> timetable = const {
+        'Mon': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Tue': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Wed': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Thu': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Fri': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Others': [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ]
       },
       List<int> courseid_list = const []}) {
     return _ApiData(
@@ -199,7 +295,8 @@ const $ApiData = _$ApiDataTearOff();
 mixin _$ApiData {
   List<Map<String, dynamic>> get homeworks =>
       throw _privateConstructorUsedError;
-  Map<String, dynamic> get timetable => throw _privateConstructorUsedError;
+  Map<String, List<dynamic>> get timetable =>
+      throw _privateConstructorUsedError;
   List<int> get courseid_list => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -212,7 +309,7 @@ abstract class $ApiDataCopyWith<$Res> {
       _$ApiDataCopyWithImpl<$Res>;
   $Res call(
       {List<Map<String, dynamic>> homeworks,
-      Map<String, dynamic> timetable,
+      Map<String, List<dynamic>> timetable,
       List<int> courseid_list});
 }
 
@@ -238,7 +335,7 @@ class _$ApiDataCopyWithImpl<$Res> implements $ApiDataCopyWith<$Res> {
       timetable: timetable == freezed
           ? _value.timetable
           : timetable // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, List<dynamic>>,
       courseid_list: courseid_list == freezed
           ? _value.courseid_list
           : courseid_list // ignore: cast_nullable_to_non_nullable
@@ -254,7 +351,7 @@ abstract class _$ApiDataCopyWith<$Res> implements $ApiDataCopyWith<$Res> {
   @override
   $Res call(
       {List<Map<String, dynamic>> homeworks,
-      Map<String, dynamic> timetable,
+      Map<String, List<dynamic>> timetable,
       List<int> courseid_list});
 }
 
@@ -281,7 +378,7 @@ class __$ApiDataCopyWithImpl<$Res> extends _$ApiDataCopyWithImpl<$Res>
       timetable: timetable == freezed
           ? _value.timetable
           : timetable // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, List<dynamic>>,
       courseid_list: courseid_list == freezed
           ? _value.courseid_list
           : courseid_list // ignore: cast_nullable_to_non_nullable
@@ -296,13 +393,109 @@ class _$_ApiData with DiagnosticableTreeMixin implements _ApiData {
   _$_ApiData(
       {this.homeworks = const [],
       this.timetable = const {
-        'Mon': <Map<String, dynamic>>[],
-        'Tue': <Map<String, dynamic>>[],
-        'Wed': <Map<String, dynamic>>[],
-        'Thu': <Map<String, dynamic>>[],
-        'Fri': <Map<String, dynamic>>[],
-        'Sat': <Map<String, dynamic>>[],
-        'Others': <Map<String, dynamic>>[]
+        'Mon': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Tue': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Wed': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Thu': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Fri': [
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ],
+          [
+            {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+          ]
+        ],
+        'Others': [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ]
       },
       this.courseid_list = const []});
 
@@ -310,16 +503,112 @@ class _$_ApiData with DiagnosticableTreeMixin implements _ApiData {
   @override
   final List<Map<String, dynamic>> homeworks;
   @JsonKey(defaultValue: const {
-    'Mon': <Map<String, dynamic>>[],
-    'Tue': <Map<String, dynamic>>[],
-    'Wed': <Map<String, dynamic>>[],
-    'Thu': <Map<String, dynamic>>[],
-    'Fri': <Map<String, dynamic>>[],
-    'Sat': <Map<String, dynamic>>[],
-    'Others': <Map<String, dynamic>>[]
+    'Mon': [
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ]
+    ],
+    'Tue': [
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ]
+    ],
+    'Wed': [
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ]
+    ],
+    'Thu': [
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ]
+    ],
+    'Fri': [
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
+      [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ]
+    ],
+    'Others': [
+      {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+    ]
   })
   @override
-  final Map<String, dynamic> timetable;
+  final Map<String, List<dynamic>> timetable;
   @JsonKey(defaultValue: const [])
   @override
   final List<int> courseid_list;
@@ -370,14 +659,15 @@ class _$_ApiData with DiagnosticableTreeMixin implements _ApiData {
 abstract class _ApiData implements ApiData {
   factory _ApiData(
       {List<Map<String, dynamic>> homeworks,
-      Map<String, dynamic> timetable,
+      Map<String, List<dynamic>> timetable,
       List<int> courseid_list}) = _$_ApiData;
 
   @override
   List<Map<String, dynamic>> get homeworks =>
       throw _privateConstructorUsedError;
   @override
-  Map<String, dynamic> get timetable => throw _privateConstructorUsedError;
+  Map<String, List<dynamic>> get timetable =>
+      throw _privateConstructorUsedError;
   @override
   List<int> get courseid_list => throw _privateConstructorUsedError;
   @override

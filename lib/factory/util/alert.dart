@@ -50,7 +50,7 @@ void notify_setting_alert(BuildContext context) {
     descTextAlign: TextAlign.start,
     animationDuration: Duration(milliseconds: 200),
     alertBorder: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(0.0),
+      borderRadius: BorderRadius.circular(10.0),
       side: BorderSide(
         color: Colors.grey,
       ),
@@ -72,7 +72,7 @@ void notify_setting_alert(BuildContext context) {
         buttons: [
           DialogButton(
             child: Text(
-              "設定画面へ行く",
+              "設定画面へ",
               style:
                   TextStyle(color: Theme.of(context).hintColor, fontSize: 20),
             ),

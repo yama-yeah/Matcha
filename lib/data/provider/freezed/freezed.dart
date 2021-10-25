@@ -27,15 +27,111 @@ class ApiData with _$ApiData {
     @Default([])
         List<Map<String, dynamic>> homeworks,
     @Default({
-      'Mon': <Map<String, dynamic>>[],
-      'Tue': <Map<String, dynamic>>[],
-      'Wed': <Map<String, dynamic>>[],
-      'Thu': <Map<String, dynamic>>[],
-      'Fri': <Map<String, dynamic>>[],
-      'Sat': <Map<String, dynamic>>[],
-      'Others': <Map<String, dynamic>>[],
+      'Mon': [
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ]
+      ],
+      'Tue': [
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ]
+      ],
+      'Wed': [
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ]
+      ],
+      'Thu': [
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ]
+      ],
+      'Fri': [
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ],
+        [
+          {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+        ]
+      ],
+      'Others': [
+        {'course_id': 0, 'course_name': '%void%', 'course_url': '%void%'}
+      ],
     })
-        Map<String, dynamic> timetable,
+        Map<String, List<dynamic>> timetable,
     @Default([])
         List<int> courseid_list,
   }) = _ApiData;
@@ -44,7 +140,7 @@ class ApiData with _$ApiData {
 @freezed
 class ApiFilterData with _$ApiFilterData {
   //this class has api's filter settings
-  //such as filter by courses ids and days
+  //such as filter by courses ids and daya
   factory ApiFilterData({
     @Default([]) List<int> filter_courseid_list,
     @Default(0) int filter_day,

@@ -6,7 +6,7 @@ class Api {
   //ログインできてるかチェック
   final url = 'https://manabaunko.azurewebsites.net/';
   Map<String, String> headers = {'content-type': 'application/json'};
-  Map<String, dynamic> user = {'userid': 'b1021091', 'password': 'gsi2Z2WU'};
+  Map<String, dynamic> user = {'userid': '', 'password': ''};
   void User(String userid, String password) {
     this.user['userid'] = userid;
     this.user['password'] = password;
@@ -43,9 +43,13 @@ class Api {
     return _tasks;
   }
 
-  Future<Map<String, dynamic>> get_timetable() async {
-    var raw = await http.post(Uri.parse(url + 'timetable'), body: user);
-    return await json2map(raw)['timetable'];
+  Future<Map<String, List<dynamic>>> get_timetable() async {
+    String body = json.encode(user);
+    var raw = await http.post(Uri.parse(url + 'timetable'),
+        body: body, headers: headers);
+    Map<String, List<dynamic>> _timetable =
+        await json2map(raw)['timetable'].cast<String, List<dynamic>>();
+    return _timetable;
   }
 
   Map<String, dynamic> json2map(http.Response json) {

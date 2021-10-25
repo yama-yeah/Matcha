@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         appBarStyle: FlexAppBarStyle.primary,
         scaffoldBackground: Color(0xFF232323),
       ).toTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
     );
   }
 }

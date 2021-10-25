@@ -65,6 +65,14 @@ class ApiDataStateNotifier extends StateNotifier<ApiData> {
     prefs.setString('homework', _json);
   }
 
+  Future<void> saveTimetable() async {
+    Map<String, List<dynamic>> _timetable = await api.get_timetable();
+    state = state.copyWith(timetable: _timetable);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String _json = jsonEncode(_timetable);
+    prefs.setString('timetable', _json);
+  }
+
   Future<void> loadTasks() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> _keys = prefs.getKeys().toList();
@@ -75,6 +83,21 @@ class ApiDataStateNotifier extends StateNotifier<ApiData> {
       }
       List<dynamic> _tasks = jsonDecode(_raw);
       state = state.copyWith(homeworks: _tasks.cast<Map<String, dynamic>>());
+    }
+  }
+
+  Future<void> loadTimetable() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> _keys = prefs.getKeys().toList();
+    if (_keys.contains('timetable')) {
+      String? _raw = prefs.getString('timetable');
+      if (_raw == null) {
+        return;
+      }
+      Map<String, dynamic> _json_map = jsonDecode(_raw);
+      Map<String, List<dynamic>> _timetable =
+          _json_map.cast<String, List<dynamic>>();
+      state = state.copyWith(timetable: _timetable);
     }
   }
 }

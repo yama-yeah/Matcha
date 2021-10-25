@@ -60,7 +60,9 @@ class Rooter extends HookWidget {
   Future<void> load_data(ApiDataStateNotifier apiNotify,
       TasksNotifierSettingStateNotifier tasksNotify) async {
     await apiNotify.loadTasks();
+    await apiNotify.loadTimetable();
     await tasksNotify.loadNotifyEnable();
+    await apiNotify.saveTimetable();
     await apiNotify.saveTasks();
     tasksNotify.fetchNotifyEnable();
   }
