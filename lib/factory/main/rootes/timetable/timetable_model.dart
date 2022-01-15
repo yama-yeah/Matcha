@@ -190,14 +190,26 @@ class Timetable_widget extends HookWidget {
     return table;
   }
 
+  Widget make_other_table(Map<String, List<dynamic>> timetable) {
+    return Container();
+  }
+
   @override
   Widget build(BuildContext context) {
     final apiProvider = useProvider(ApiDataProvider);
     final apiState = useProvider(ApiDataProvider.notifier);
-    return Padding(
-        padding: EdgeInsets.fromLTRB(2.5, 5, 2.5, 0),
-        child: Container(
-          child: make_table(context, apiState.state.timetable),
-        ));
+    return ConstrainedBox(
+      constraints: BoxConstraints(),
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(2.5, 5, 2.5, 0),
+            child: Container(
+              child: make_table(context, apiState.state.timetable),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

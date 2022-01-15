@@ -2,7 +2,7 @@ import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/foundation.dart';
 import 'package:matcha/factory/util/date.dart';
 
-createNotification({
+Future<void> createNotification({
   required String? title,
   required String? body,
   required int? id,
@@ -36,4 +36,11 @@ createNotification({
           -1),
     ),
   );
+}
+
+Future<void> cancelNotification({
+  required int? id,
+  required String? channelKey,
+}) async {
+  await AwesomeNotifications().cancelAllSchedules();
 }

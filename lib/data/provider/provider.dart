@@ -144,6 +144,7 @@ class TasksNotifierSettingStateNotifier
     print(_enabled_task_id.toString() + '\nfetching keys');
     state = state.copyWith(is_taskid_enabled: state_copy);
     saveNotifyEnable();
+    
     createTasksNotify();
   }
 
